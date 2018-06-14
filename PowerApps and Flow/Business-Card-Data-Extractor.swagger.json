@@ -1,0 +1,160 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Business Card Extractor",
+    "description": "Extracts data from business cards. Using regex and Azure ML for name, organisation and address matching.",
+    "version": "1.0.0"
+  },
+  "host": "businesscardextractor.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/api/ExtractData": {
+      "get": {
+        "operationId": "/api/ExtractData/get",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "fulltext",
+            "in": "body",
+            "description": "Raw card text from OCR",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "GET request to extract data",
+        "responses": {
+          "200": {
+            "description": "Contact data",
+            "x-ms-summary": "Contact data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FullName": {
+                  "type": "string",
+                  "x-ms-summary": "Fullname"
+                },
+                "Organisation": {
+                  "type": "string",
+                  "x-ms-summary": "Organisation"
+                },
+                "Address": {
+                  "type": "string",
+                  "x-ms-summary": "Address"
+                },
+                "Mobile": {
+                  "type": "string",
+                  "x-ms-summary": "Mobile"
+                },
+                "Phone": {
+                  "type": "string",
+                  "x-ms-summary": "Phone"
+                },
+                "Email": {
+                  "type": "string",
+                  "x-ms-summary": "Email"
+                },
+                "Website": {
+                  "type": "string",
+                  "x-ms-summary": "Website"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ],
+        "summary": "Extract Card Data from GET"
+      },
+      "post": {
+        "operationId": "/api/ExtractData/post",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "fulltext",
+            "in": "body",
+            "description": "Raw card text from OCR",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "POST request with OCR raw text in body - extracts data.",
+        "responses": {
+          "200": {
+            "description": "Contact data",
+            "x-ms-summary": "Contact data",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FullName": {
+                  "type": "string",
+                  "x-ms-summary": "Fullname"
+                },
+                "Organisation": {
+                  "type": "string",
+                  "x-ms-summary": "Organisation"
+                },
+                "Address": {
+                  "type": "string",
+                  "x-ms-summary": "Address"
+                },
+                "Mobile": {
+                  "type": "string",
+                  "x-ms-summary": "Mobile"
+                },
+                "Phone": {
+                  "type": "string",
+                  "x-ms-summary": "Phone"
+                },
+                "Email": {
+                  "type": "string",
+                  "x-ms-summary": "Email"
+                },
+                "Website": {
+                  "type": "string",
+                  "x-ms-summary": "Website"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ],
+        "summary": "Contact data from raw text"
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "apikeyQuery": {
+      "type": "apiKey",
+      "name": "code",
+      "in": "query"
+    }
+  },
+  "security": [],
+  "tags": []
+}
