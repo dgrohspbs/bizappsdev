@@ -5,7 +5,7 @@
     "description": "Extracts data from business cards. Using regex and Azure ML for name, organisation and address matching.",
     "version": "1.0.0"
   },
-  "host": "businesscardextractor.azurewebsites.net",
+  "host": "bizcardscanner.azurewebsites.net",
   "basePath": "/",
   "schemes": [
     "https",
