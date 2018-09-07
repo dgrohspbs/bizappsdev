@@ -33,15 +33,23 @@ namespace CardScannerFunction
         private const string baseUrl = "https://ussouthcentral.services.azureml.net/workspaces/6fd07cdc54234d52b8822c4b7f53a37c/services/74475c981eed45db81ebc3602f8e16df/execute?api-version=2.0&format=swagger";
         private const string apiKey = "thOgj8XCdo6fw/5y8UnkbI1nRg6D8SCdicz/FKntsKo/QMLj2xPS9R2JtDVWxEEq8KTptJHp0osl+EGba0O37A==";
 
+        /// <summary>
+        /// Creates a new instance and immediately extracts entities in the given text lines
+        /// </summary>
+        /// <param name="textLines"></param>
         public EntityExtractor(List<string> textLines)
         {
             ExtractEntitiesFromText(textLines).Wait();
         }
 
-        //Use Azure ML and named entity extraction to predict what person name, organisation and address from text 
+        /// <summary>
+        /// Use Azure ML and named entity extraction to predict what person name, organisation and address from text 
+        /// </summary>
+        /// <param name="textLines"></param>
+        /// <returns></returns>
         private async Task ExtractEntitiesFromText(List<string> textLines)
         {
-            var webServiceInputText = String.Join(", ", textLines);
+            var webServiceInputText = String.Join(", ", textLines); //The ML model takes all lines comma seperated
             using (var client = new HttpClient())
             {
                 var scoreRequest = new
