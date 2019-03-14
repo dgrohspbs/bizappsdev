@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClientFacingBot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="botFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">./ACS-aa1-ClientBot.bot</Value>
+    </Setting>
+    <Setting Name="botFileSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">qdzMISNuakRs+OaQQvtkuZCWmtAOW7rCTPt2njn8BdA=</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

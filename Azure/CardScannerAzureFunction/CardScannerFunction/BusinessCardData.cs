@@ -33,7 +33,8 @@ namespace CardScannerFunction
             "Gmbh&CO KG",
             "GmbH & Co KG",
             "GmbH & Co Ltd",
-            "Incorporated"
+            "Incorporated",
+            "Limited & Co KG"
         };
 
         public BusinessCardData(string fullText)

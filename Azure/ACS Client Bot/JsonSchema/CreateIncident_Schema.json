@@ -1,0 +1,34 @@
+﻿{
+  "type": "object",
+  "required": [
+    "title",
+    "description"
+  ],
+  "Templates": {
+    "NotUnderstood": {
+      "Patterns": [ "I do not understand \"{0}\".", "Try again, I don't get \"{0}\"." ]
+    },
+    "EnumSelectOne": {
+      "Patterns": [ "Please let me know the {&}: {||}" ],
+      "ChoiceStyle": "PerLine"
+    }
+  },
+  "properties": {
+    "title": {
+      "Prompt": { "Patterns": [ "Can you please provide me with a {&} of the issue?" ] },
+      "type": [
+        "string",
+        "null"
+      ],
+      "Validate": "var result = new ValidateResult{ IsValid = true, Value = value}; var title = (value as string).Trim(); if (title.Length == 0) {result.Feedback = \"Please provide a brief description of the issue.\"; result.IsValid = false; } return result;"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "Validate": "var result = new ValidateResult{ IsValid = true, Value = value}; var description = (value as string).Trim(); if (description.Length == 0) {result.Feedback = \"Please provide some more details:\"; result.IsValid = false; } return result;"
+    }
+  },
+  "OnCompletion": "await context.PostAsync(\"I am submitting your issue, and will confirm momentarily.\");"
+}

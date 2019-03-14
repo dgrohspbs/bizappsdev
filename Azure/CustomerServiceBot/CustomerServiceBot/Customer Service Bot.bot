@@ -1,0 +1,18 @@
+{
+    "name": "Customer Service Bot",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "49ed7840-1a56-11e9-b0d4-818c37ab8d36",
+            "name": "Customer Service Bot"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\Andi\\source\\repos\\bizappsdev\\Azure\\CustomerServiceBot\\CustomerServiceBot\\Customer Service Bot.bot",
+    "overrides": null
+}
